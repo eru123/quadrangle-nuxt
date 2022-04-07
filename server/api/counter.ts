@@ -4,7 +4,7 @@ const apps = getApps()
 
 if (!apps.length) {
     initializeApp({
-        credential: cert("service-account.json")
+        credential: cert("./service-account.json")
     })
 }
 
