@@ -5,6 +5,6 @@
 </template>
 <script>
 definePageMeta({
-  layout: "default",
+  layout: "nonuser",
 });
 </script>
