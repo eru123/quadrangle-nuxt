@@ -21,7 +21,7 @@
     }
 
     h1 {
-      @apply text-3xl text-gray-700 font-normal my-4;
+      @apply text-3xl text-gray-700 font-normal my-4 text-center;
     }
 
     p {
