@@ -1,0 +1,74 @@
+<template>
+  <div class="w">
+    <div class="c">
+      <NuxtLink class="g b" to="/about">
+        <img src="/favicon.png" class="l">
+        <div class="n">Quadrangle</div>
+      </NuxtLink>
+      <div class="g i">
+        <NuxtLink to="/about" class="i">About</NuxtLink>
+        <NuxtLink to="/team" class="i">The Team</NuxtLink>
+        <NuxtLink to="/survey" class="i">Survey</NuxtLink>
+        <NuxtLink to="/signin" class="i">Login</NuxtLink>
+      </div>
+      <div class="g l">
+        <NuxtLink to="/support" class="i">Support</NuxtLink>
+      </div>
+    </div>  
+  </div>
+</template>
+<style lang='scss' scoped>@import 'assets/styles/variables.scss';
+
+.w {
+  @apply w-full flex flex-col items-center justify-center;
+
+  .c {
+    @apply w-full pb-6 pt-12 px-8 flex flex-row items-center;
+    max-width: $max-screen-width;
+
+    .g {
+      @apply flex flex-row items-center flex-1;
+
+      &.b {
+        @apply justify-start;
+
+        .l {
+          @apply w-8 h-8 mr-4;
+        }
+
+        .n {
+          @apply font-bold text-2xl text-gray-700;
+          font-weight: 900;
+        }
+      }
+
+      &.i {
+        @apply justify-center;
+
+        .i {
+          @apply text-gray-400 hover:text-teal-500 text-sm border-b-2 pb-1 border-white font-bold transition duration-200 ease-in-out;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+          &:not(:last-child) {
+            @apply mr-8;
+          }
+
+          &.router-link-active {
+            @apply text-teal-500 border-teal-500;
+          }
+        }
+      }
+
+      &.l {
+        @apply justify-end;
+
+        .i {
+          @apply bg-teal-500 hover:bg-teal-600 text-sm text-white px-8 py-2 rounded-full transition duration-200 ease-in-out;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+      }
+    }
+  }
+}</style>
