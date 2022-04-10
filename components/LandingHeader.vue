@@ -23,14 +23,14 @@
   @apply w-full flex flex-col items-center justify-center;
 
   .c {
-    @apply w-full pb-6 pt-12 px-8 flex flex-row items-center;
+    @apply w-full pb-6 pt-12 px-8 grid grid-cols-2 lg:grid-cols-3 items-center;
     max-width: $max-screen-width;
 
     .g {
-      @apply flex flex-row items-center flex-1;
+      @apply flex flex-row items-center lg:flex-1;
 
       &.b {
-        @apply justify-start;
+        @apply justify-start order-1;
 
         .l {
           @apply w-8 h-8 mr-4;
@@ -43,10 +43,10 @@
       }
 
       &.i {
-        @apply justify-center;
+        @apply justify-center order-3 lg:order-2 col-span-2 lg:col-span-1 mt-8 lg:mt-0;
 
         .i {
-          @apply text-gray-400 hover:text-teal-500 text-sm border-b-2 pb-1 border-white font-bold transition duration-200 ease-in-out;
+          @apply text-gray-400 hover:text-teal-500 text-sm border-b-2 pb-1 border-white font-bold transition duration-200 ease-in-out lg:block;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
           &:not(:last-child) {
@@ -60,7 +60,7 @@
       }
 
       &.l {
-        @apply justify-end;
+        @apply justify-end order-2 lg:order-3;
 
         .i {
           @apply bg-teal-500 hover:bg-teal-600 text-sm text-white px-8 py-2 rounded-full transition duration-200 ease-in-out;
