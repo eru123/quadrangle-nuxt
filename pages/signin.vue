@@ -1,16 +1,55 @@
 <script setup lang="ts">
+import { computed, watchEffect } from 'vue'
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
 definePageMeta({
   layout: "default",
 });
 
 const accountType = useAccountType();
+const accountTypeList = useAccountTypeList();
+const userState = useUserState();
+const validAccountType = computed(() => accountTypeList.value.find(i => i.title == accountType.value))
+const userLoginState = computed(() => validAccountType.value && !!userState.value)
+
+let loginWithGoogle;
+if (process.client) {
+  const { auth } = useNuxtApp().$firebase()
+  const provider = new GoogleAuthProvider();
+
+  watchEffect(() => {
+    if (userLoginState.value) {
+      navigateTo("/")
+    }
+  })
+  
+  loginWithGoogle = () => !userState.value ? signInWithPopup(auth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      // ...
+      console.log(result, credential)
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      console.log(error, credential)
+    }) : null;
+}
 
 </script>
 <template>
   <div class="w">
     <div class="c b">
       <div class="c">
-        <img src="@/assets/images/signup.png" />
+        <img src="/img/signup.svg" />
         <h1>
           Learn with your
           <span class="brand">Quadmates</span>
@@ -20,12 +59,15 @@ const accountType = useAccountType();
     </div>
     <div class="c f">
       <div class="c">
-        <img src="@/assets/images/logo.png" alt="" class="logo">
+        <img src="/img/logo.svg" class="logo" />
         <h1>Sign In</h1>
         <h3>Choose account type</h3>
         <ChooseAccountType />
         <div class="actions">
-          <button>Sign in with Google</button>
+          <button
+            :disabled="!validAccountType || (userState && !userLoginState)"
+            @click="loginWithGoogle"
+          >{{ userState?.email ? `Sign in as ${userState?.email}` : 'Sign in with google' }}</button>
         </div>
       </div>
     </div>
@@ -86,6 +128,9 @@ const accountType = useAccountType();
         @apply flex flex-row items-center justify-center mt-8;
         button {
           @apply px-4 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-700 transition-all duration-200 ease-in-out;
+          &:disabled {
+            @apply cursor-not-allowed opacity-50;
+          }
         }
       }
     }
