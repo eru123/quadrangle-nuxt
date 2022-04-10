@@ -47,6 +47,7 @@ if (process.client) {
 </script>
 <template>
   <div class="w">
+    <FloatingBackButton />
     <div class="c b">
       <div class="c">
         <img src="/img/signup.svg" />
