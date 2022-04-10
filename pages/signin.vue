@@ -45,7 +45,7 @@ const accountType = useAccountType();
     }
 
     &.b {
-      @apply bg-green-100;
+      @apply bg-green-100 hidden lg:flex;
 
       img {
         width: 100%;
