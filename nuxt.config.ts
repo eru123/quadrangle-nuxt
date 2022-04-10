@@ -2,7 +2,6 @@ import { defineNuxtConfig } from 'nuxt3'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
-  ssr: true,
   publicRuntimeConfig: {
     FIREBASE: {
       apiKey: process.env.FBC_apiKey,
@@ -35,5 +34,13 @@ export default defineNuxtConfig({
     "@": ".",
     "assets": "./assets",
     "public": "./public"
+  },
+  // meta favicon
+  // https://nuxtjs.org/api/configuration-favicon.html
+  meta: {
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+    ],
+    title: 'Quadrangle',
   }
 })
