@@ -1,9 +1,15 @@
 <script setup>
+import { watchEffect } from 'vue'
+
 if (process.client) {
-  const { auth } = useNuxtApp().$firebase()
-  auth.onAuthStateChanged(user => {
-    if (!user) {
-      navigateTo("/logout")
+  const route = useRoute()
+  const userState = useUserState()
+  const accountType = useAccountType();
+  const accountTypeList = useAccountTypeList();
+  const userLoginState = computed(() => accountTypeList.value.find(i => i.title == accountType.value) && userState.value)
+  watchEffect(() => {
+    if (!userLoginState.value) {
+      navigateTo("/landing")
     }
   })
 }
