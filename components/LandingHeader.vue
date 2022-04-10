@@ -7,7 +7,7 @@
       </NuxtLink>
       <div class="g i">
         <NuxtLink to="/about" class="i">About</NuxtLink>
-        <NuxtLink to="/team" class="i">The Team</NuxtLink>
+        <NuxtLink to="/team" class="i">Team</NuxtLink>
         <NuxtLink to="/survey" class="i">Survey</NuxtLink>
         <NuxtLink to="/signin" class="i">Login</NuxtLink>
       </div>
@@ -23,7 +23,7 @@
   @apply w-full flex flex-col items-center justify-center;
 
   .c {
-    @apply w-full pb-6 pt-12 px-8 grid grid-cols-2 lg:grid-cols-3 items-center;
+    @apply w-full pb-6 pt-6 lg:pt-12 px-4 lg:px-8 grid grid-cols-2 lg:grid-cols-3 items-center;
     max-width: $max-screen-width;
 
     .g {
@@ -33,11 +33,11 @@
         @apply justify-start order-1;
 
         .l {
-          @apply w-8 h-8 mr-4;
+          @apply w-8 h-8 mr-2 lg:mr-4;
         }
 
         .n {
-          @apply font-bold text-2xl text-gray-700;
+          @apply font-bold text-xl lg:text-2xl text-gray-700;
           font-weight: 900;
         }
       }
@@ -63,7 +63,7 @@
         @apply justify-end order-2 lg:order-3;
 
         .i {
-          @apply bg-teal-500 hover:bg-teal-600 text-sm text-white px-8 py-2 rounded-full transition duration-200 ease-in-out;
+          @apply bg-teal-500 hover:bg-teal-600 text-sm text-white px-4 lg:px-8 py-2 rounded-full transition duration-200 ease-in-out;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
