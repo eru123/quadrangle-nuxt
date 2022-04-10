@@ -1,11 +1,7 @@
 <script setup lang="ts">
 
 const select = useAccountType()
-
-const list = useState('AccountTypeList', () => [
-  { title: 'quadmate', emoji: '👨‍🎓', description: 'Find Career mentors, subject tutors, and like-minded individuals' },
-  { title: 'quadmaster', emoji: '👨‍🏫', description: 'Share your knowledge and expertise as a mentor' },
-])
+const list = useAccountTypeList()
 
 </script>
 <template>
