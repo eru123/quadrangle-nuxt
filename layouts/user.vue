@@ -2,14 +2,13 @@
 import { watchEffect } from 'vue'
 
 if (process.client) {
-  const route = useRoute()
   const userState = useUserState()
   const accountType = useAccountType();
   const accountTypeList = useAccountTypeList();
   const userLoginState = computed(() => accountTypeList.value.find(i => i.title == accountType.value) && userState.value)
   watchEffect(() => {
     if (!userLoginState.value) {
-      navigateTo("/landing")
+      navigateTo("/about")
     }
   })
 }
