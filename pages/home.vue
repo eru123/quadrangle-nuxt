@@ -23,7 +23,7 @@ definePageMeta({
                 <button class="s">Support</button>
             </div>
 
-            <img src="/img/Quadmates.png" class="bn">
+            <img src="/img/Home_Mockup.png" class="bn">
 
             <div class="gc">
                 <div class="gcc">
