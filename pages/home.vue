@@ -23,18 +23,18 @@ definePageMeta({
                 <button class="s">Support</button>
             </div>
 
-            <img src="/img/Home%20-%20Mockup.png" class="bn">
+            <img src="public/img/Home%20-%20Mockup.png" class="bn">
 
             <div class="gc">
                 <div class="gcc">
-                    <img src="/img/Quadmates.png">
+                    <img src="public/img/Quadmates.png">
                     <div class="gct">Quadmates</div>
                     <div class="gcd">
                         Quadrangles term <br /> for peers
                     </div>
                 </div>
                 <div class="gcc">
-                    <img src="/img/Quadmasters.png">
+                    <img src="public/img/Quadmasters.png">
                     <div class="gct">Quadmasters</div>
                     <div class="gcd">
                         Quadrangles term <br /> for mentors and tutors
