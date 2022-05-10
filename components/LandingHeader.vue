@@ -6,13 +6,12 @@
         <div class="n">Quadrangle</div>
       </NuxtLink>
       <div class="g i">
-        <NuxtLink to="/about" class="i">About</NuxtLink>
-        <NuxtLink to="/team" class="i">Team</NuxtLink>
-        <NuxtLink to="/survey" class="i">Survey</NuxtLink>
-        <NuxtLink to="/signin" class="i">Login</NuxtLink>
+        <NuxtLink to="/home" class="i">Home <hr /></NuxtLink>
+        <NuxtLink to="/about" class="i">About <hr /></NuxtLink>
+        <NuxtLink to="/contact" class="i">About <hr /></NuxtLink>
       </div>
       <div class="g l">
-        <NuxtLink to="/support" class="i">Support</NuxtLink>
+        <NuxtLink to="/support" class="i">Get Early Access</NuxtLink>
       </div>
     </div>  
   </div>
@@ -23,7 +22,7 @@
   @apply w-full flex flex-col items-center justify-center;
 
   .c {
-    @apply w-full pb-6 pt-6 lg:pt-12 px-4 lg:px-8 grid grid-cols-2 lg:grid-cols-3 items-center;
+    @apply w-full py-6 px-4 lg:px-8 grid grid-cols-2 lg:grid-cols-3 items-center;
     max-width: $max-screen-width;
 
     .g {
@@ -37,7 +36,7 @@
         }
 
         .n {
-          @apply font-bold text-xl lg:text-2xl text-gray-700;
+          @apply font-bold text-xl lg:text-2xl text-teal-500;
           font-weight: 900;
         }
       }
@@ -46,15 +45,34 @@
         @apply justify-center order-3 lg:order-2 col-span-2 lg:col-span-1 mt-8 lg:mt-0;
 
         .i {
-          @apply text-gray-400 hover:text-teal-500 text-sm border-b-2 pb-1 border-white font-bold transition duration-200 ease-in-out lg:block;
+          @apply text-gray-400 hover:text-teal-500 text-sm font-bold transition duration-200 ease-in-out lg:block;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+          hr {
+            @apply border-t-2 mx-2 mt-1 border-white;
+          }
 
           &:not(:last-child) {
             @apply mr-8;
           }
 
           &.router-link-active {
-            @apply text-teal-500 border-teal-500;
+            @apply text-teal-500;
+            
+            hr {
+              @apply border-teal-500;
+              animation: ms-in .2s ease-out;
+            }
+
+            @keyframes ms-in {
+              from {
+                @apply mx-0;
+              }
+
+              to {
+                @apply mx-2;
+              }
+            }
           }
         }
       }
@@ -71,4 +89,5 @@
       }
     }
   }
-}</style>
+}
+</style>

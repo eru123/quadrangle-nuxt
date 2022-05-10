@@ -8,7 +8,7 @@ if (process.client) {
   const userLoginState = computed(() => accountTypeList.value.find(i => i.title == accountType.value) && userState.value)
   watchEffect(() => {
     if (!userLoginState.value) {
-      navigateTo("/about")
+      navigateTo("/home")
     }
   })
 }
