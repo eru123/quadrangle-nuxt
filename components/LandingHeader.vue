@@ -8,7 +8,7 @@
       <div class="g i">
         <NuxtLink to="/home" class="i">Home <hr /></NuxtLink>
         <NuxtLink to="/about" class="i">About <hr /></NuxtLink>
-        <NuxtLink to="/contact" class="i">About <hr /></NuxtLink>
+        <NuxtLink to="/contact" class="i">Contact Us <hr /></NuxtLink>
       </div>
       <div class="g l">
         <NuxtLink to="/support" class="i">Get Early Access</NuxtLink>

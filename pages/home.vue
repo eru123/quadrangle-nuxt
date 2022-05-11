@@ -8,13 +8,13 @@ definePageMeta({
 <template>
   <div class="w">
     <div class="c b">
-        <div class="bc">
+        <div class="j">
             <div class="t">
                 The bridge between <br /> <span class="g">theoretical</span> and <span class="g">practical</span>
             </div>
 
             <div class="d">
-                We are a collaborative learning platform for peer-to-peer learning <br> 
+                We are a collaborative learning platform for peer-to-peer learning
                 and career development. Learn from your peers, mentors, and tutors.
             </div>
 
@@ -22,22 +22,45 @@ definePageMeta({
                 <button class="e">Get Early Access</button>
                 <button class="s">Support</button>
             </div>
-
-            <img src="/img/Home_Mockup.png" class="bn">
-
+        </div>
+        <div class="bn">
+            <div class="bg"></div>
+            <img src="/img/Home_Mockup.png">
+        </div>
+        <div class="gcw">
             <div class="gc">
                 <div class="gcc">
                     <img src="/img/Quadmates.png">
                     <div class="gct">Quadmates</div>
                     <div class="gcd">
-                        Quadrangles term <br /> for peers
+                        Quadrangle's term <br /> for peers
                     </div>
                 </div>
                 <div class="gcc">
                     <img src="/img/Quadmasters.png">
                     <div class="gct">Quadmasters</div>
                     <div class="gcd">
-                        Quadrangles term <br /> for mentors and tutors
+                        Quadrangle's term <br /> for mentors and tutors
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="key-features">
+            <div class="title-container">
+                <div class="mini-title">OUR KEY FEATURES</div>
+                <div class="title">Designed for Quadmasters <br /> and Quadmates</div>
+            </div>
+            <div class="features-container">
+                <div v-for="i in 3" class="feature" :key="i">
+                    <div class="img-container">
+                        <img src="" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="title">Career Mentoring</div>
+                        <div class="subtitle">Learn the tricks and trade of their desired industry.</div>
+                    </div>
+                    <div class="actions">
+                        <button>Learn More</button>
                     </div>
                 </div>
             </div>
@@ -53,11 +76,13 @@ definePageMeta({
     }
 
     .b { // banner
-        @apply bg-sky-900 font-extrabold text-3xl text-center text-white flex flex-col justify-start items-center;
-        max-height: 80vh;
-        .bc {
+        @apply  font-extrabold text-3xl text-center text-white flex flex-col justify-start items-center mb-96;
+        // max-height: 80vh;
+        
+        .j {
+            @apply bg-sky-900 w-full;
             .t {
-                @apply mt-12 text-white pt-12 pb-4;
+                @apply mt-6 text-white pt-12 pb-4;
 
                 .g {
                     @apply text-teal-400;
@@ -65,12 +90,12 @@ definePageMeta({
             }
 
             .d {
-                @apply font-thin text-sm mt-6 mb-4;
+                @apply font-thin text-sm mt-6 mb-4 max-w-prose text-center mx-auto px-6;
             }
 
 
             .a {
-                @apply pt-2 pb-0;
+                @apply pt-2 mb-4;
 
                 button {
                     @apply px-6 py-2 text-base mx-2 rounded-full font-thin transition-all;
@@ -84,13 +109,25 @@ definePageMeta({
                     @apply bg-white hover:bg-teal-100 text-teal-500 hover:text-teal-900;
                 }
             }
+        }
 
-            .bn {
-                @apply w-full my-0 py-0;
+        .bn {
+            @apply w-full;
+
+            .bg {
+                @apply bg-sky-900 h-40 sm:h-72 md:h-80 xl:h-96 mb-0 p-0;
+                width: 100%;
             }
 
+            img {
+                @apply w-full max-w-screen-lg mx-auto -mt-40 sm:-mt-72 md:-mt-80 xl:-mt-96 mb-0;
+            }
+        }
+        
+        .gcw {
+            @apply px-12 w-full;
             .gc {
-                @apply w-fit flex flex-row px-12 mx-auto rounded-3xl items-center justify-center py-4 mb-12;
+                @apply w-full max-w-screen-md flex flex-row px-12 mx-auto rounded-3xl items-center justify-around py-4 mb-12 ;
                 background: linear-gradient(to bottom right, #04645c 0%, #03bb93 100%);
                 .gcc {
                     @apply flex flex-col items-center justify-center text-white p-4;
@@ -104,6 +141,57 @@ definePageMeta({
                     }
                     .gcd {
                         @apply text-xs font-thin ;
+                    }
+                }
+            }
+        }
+
+        .key-features {
+            @apply w-full;
+            .title-container {
+                @apply mb-8;
+                .mini-title {
+                    @apply text-teal-900 text-xs;
+                }
+
+                .title {
+                    @apply text-gray-900 text-3xl;
+                }
+            }
+
+            .features-container {
+                @apply w-full max-w-screen-md mx-auto flex flex-row justify-center;
+
+                .feature {
+                    @apply bg-teal-50 mx-2 flex flex-col justify-center px-4 py-6 rounded-lg shadow-xl;
+
+                    .content {
+                        .title {
+                            @apply text-sm mb-2 text-sky-900 font-bold;
+                        }
+
+                        .subtitle {
+                            @apply text-xs text-gray-700 font-thin;
+                        }
+                    }
+
+                    .actions {
+                        @apply mt-3;
+
+                        button {
+                            @apply text-sm py-1 px-3 bg-teal-500 hover:bg-teal-700 transition;
+                        }
+                    }
+
+                    &:hover {
+                        @apply bg-sky-900;
+                        .title {
+                            @apply text-white;
+                        }
+
+                        .subtitle {
+                            @apply text-white;
+                        }
                     }
                 }
             }
