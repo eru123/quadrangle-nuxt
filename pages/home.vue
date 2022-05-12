@@ -10,6 +10,12 @@ const features = [
     {img:"/img/Subject_tutoring.png",title: "Subject Tutoring",subtitle:"Focus on learning a particular subject from subject specialists."}
 ]
 
+const itWorks = [
+    {img:"/img/How_it_works-Search.png",title: "Search for a Quadmaster",subtitle:"Browse through our list of qualified industry professionals"},
+    {img:"/img/How_it_works-Book.png",title: "Book & Pay",subtitle:"Book and pay your session"},
+    {img:"/img/How_it_works-Start.png",title: "Start your session!",subtitle:"Start learning from our Quadmasters after completing the payment"}
+]
+
 </script>
 <template>
   <div class="w">
@@ -74,7 +80,11 @@ const features = [
         <div class="how-it-works">
             <div class="title">HOW IT WORKS?</div>
             <div class="items">
-
+                <div class="item" v-for="{img, title, subtitle} in itWorks">
+                    <img :src="img">
+                    <div class="title">{{title}}</div>
+                    <div class="subtitle">{{subtitle}}</div>
+                </div>
             </div>
         </div>
     </div>
@@ -172,7 +182,7 @@ const features = [
             }
 
             .features-container {
-                @apply w-full max-w-screen-md mx-auto flex flex-col md:flex-row justify-center;
+                @apply w-full max-w-screen-md mx-auto flex flex-col md:flex-row justify-center mb-12;
 
                 .feature {
                     @apply bg-teal-50 flex flex-col justify-center px-4 py-6 rounded-lg shadow-xl mb-4 md:mb-0 flex-1 max-w-xs mx-auto md:mx-2;
@@ -191,7 +201,7 @@ const features = [
                         }
 
                         .subtitle {
-                            @apply text-xs text-gray-700 font-thin;
+                            @apply text-xs text-gray-700 font-light;
                         }
                     }
 
@@ -218,7 +228,31 @@ const features = [
         }
 
         .how-it-works {
-            
+            @apply w-full bg-teal-50 px-2 py-4 mb-12;
+
+            .title {
+                @apply pt-8 pb-12 md:py-8 text-teal-500 text-xl;
+            }
+
+            .items {
+                @apply flex md:flex-row flex-col items-center md:items-start justify-center mb-8;
+
+                .item {
+                    @apply flex-1 max-w-xs mb-12 md:mb-0;
+
+                    img {
+                        @apply h-28 mx-auto;
+                    }
+
+                    .title {
+                        @apply text-gray-700 text-base pb-2;
+                    }
+
+                    .subtitle {
+                        @apply text-gray-600 text-xs font-light;
+                    }
+                }
+            }
         }
     }
 }
