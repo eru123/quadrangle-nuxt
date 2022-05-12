@@ -29,6 +29,12 @@ const domainsCover = [
     {img: "/img/Icon-Teacher.png", title: "Teacher Education"},
 ]
 
+const wordOfMouth = [
+    {img:"/img/Profile1.png",name:"Matthew Austria",position:"Business Administration Student",description:"Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,"},
+    {img:"/img/Profile2.png",name:"Adelynne Ocampo",position:"Computer Science Professor",description:"Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,"},
+    {img:"/img/Profile3.png",name:"Ingrid Sibayan",position:"School Executive",description:"Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,"},
+]
+
 </script>
 <template>
   <div class="w">
@@ -108,6 +114,18 @@ eiusmod tempor incididunt ut labore et dolore</div>
                 <div class="item" v-for="{img, title} in domainsCover">
                     <img :src="img">
                     <div class="title">{{title}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="word-of-mouth">
+            <div class="title">WHAT other people are saying</div>
+            <div class="items">
+                <div class="item" v-for="{img,name,position,description} in wordOfMouth">
+                    <img :src="img">
+                    <div class="name">{{name}}</div>
+                    <div class="position"> {{position}} </div>
+                    <div class="description"> {{description}} </div>
                 </div>
             </div>
         </div>
@@ -304,7 +322,40 @@ eiusmod tempor incididunt ut labore et dolore</div>
                     }
                 }
             }
+        }
 
+        .word-of-mouth {
+            @apply w-full py-12;
+
+            @apply bg-gray-200;
+
+            .title {
+                @apply text-gray-800 uppercase pb-12 text-2xl;
+            }
+
+            .items {
+                @apply w-full max-w-screen-md mx-auto flex flex-col md:flex-row;
+
+                .item {
+                    @apply max-w-xs mx-auto md:mx-2 flex flex-col items-center justify-center border border-teal-500 bg-white p-8 rounded-lg mb-4;
+
+                    img {
+                        @apply w-16 mx-auto;
+                    }
+
+                    .name {
+                        @apply text-sm font-bold text-gray-700;
+                    }
+
+                    .position {
+                        @apply text-xs font-light mb-6 text-gray-500;
+                    }
+
+                    .description {
+                        @apply text-sm font-light text-gray-600;
+                    }
+                }
+            }
         }
     }
 }
