@@ -4,6 +4,37 @@ definePageMeta({
   layout: "visitor",
 });
 
+const features = [
+    {img:"/img/Career_mentoring.png",title: "Career Mentoring",subtitle:"Learn the tricks and trade of their desired industry."},
+    {img:"/img/Career_counselling.png",title: "Career Counselling",subtitle:"Get advice/guidance from industry professionals on which career path would best fit your skills or interests."},
+    {img:"/img/Subject_tutoring.png",title: "Subject Tutoring",subtitle:"Focus on learning a particular subject from subject specialists."}
+]
+
+const itWorks = [
+    {img:"/img/How_it_works-Search.png",title: "Search for a Quadmaster",subtitle:"Browse through our list of qualified industry professionals"},
+    {img:"/img/How_it_works-Book.png",title: "Book & Pay",subtitle:"Book and pay your session"},
+    {img:"/img/How_it_works-Start.png",title: "Start your session!",subtitle:"Start learning from our Quadmasters after completing the payment"}
+]
+
+const domainsCover = [
+    {img: "/img/Icon-Business.png", title: "Business"},
+    {img: "/img/Icon-Engineering.png", title: "Engineering"},
+    {img: "/img/Icon-Computer_Science.png", title: "Computer Science"},
+    {img: "/img/Icon-Arts.png", title: "Arts & Design"},
+    {img: "/img/Icon-Health.png", title: "Health & Medicine"},
+    {img: "/img/Icon-Tourism.png", title: "Tourism"},
+    {img: "/img/Icon-Agriculture.png", title: "Agriculture"},
+    {img: "/img/Icon-Law.png", title: "Public Service"},
+    {img: "/img/Icon-Science.png", title: "Science"},
+    {img: "/img/Icon-Teacher.png", title: "Teacher Education"},
+]
+
+const wordOfMouth = [
+    {img:"/img/Profile1.png",name:"Matthew Austria",position:"Business Administration Student",description:"Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,"},
+    {img:"/img/Profile2.png",name:"Adelynne Ocampo",position:"Computer Science Professor",description:"Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,"},
+    {img:"/img/Profile3.png",name:"Ingrid Sibayan",position:"School Executive",description:"Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,"},
+]
+
 </script>
 <template>
   <div class="w">
@@ -51,17 +82,50 @@ definePageMeta({
                 <div class="title">Designed for Quadmasters <br /> and Quadmates</div>
             </div>
             <div class="features-container">
-                <div v-for="i in 3" class="feature" :key="i">
+                <div v-for="{img, title, subtitle} in features" class="feature" :key="title">
                     <div class="img-container">
-                        <img src="" alt="">
+                        <img :src="img" alt="">
                     </div>
                     <div class="content">
-                        <div class="title">Career Mentoring</div>
-                        <div class="subtitle">Learn the tricks and trade of their desired industry.</div>
+                        <div class="title">{{title}}</div>
+                        <div class="subtitle">{{subtitle}}</div>
                     </div>
                     <div class="actions">
-                        <button>Learn More</button>
+                        <NuxtLink to="/about" >Learn More</NuxtLink>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="how-it-works">
+            <div class="title">HOW IT WORKS?</div>
+            <div class="items">
+                <div class="item" v-for="{img, title, subtitle} in itWorks">
+                    <img :src="img">
+                    <div class="title">{{title}}</div>
+                    <div class="subtitle">{{subtitle}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="domains-we-cover">
+            <div class="title">Domains we cover</div>
+            <div class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore</div>
+            <div class="items">
+                <div class="item" v-for="{img, title} in domainsCover">
+                    <img :src="img">
+                    <div class="title">{{title}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="word-of-mouth">
+            <div class="title">WHAT other people are saying</div>
+            <div class="items">
+                <div class="item" v-for="{img,name,position,description} in wordOfMouth">
+                    <img :src="img">
+                    <div class="name">{{name}}</div>
+                    <div class="position"> {{position}} </div>
+                    <div class="description"> {{description}} </div>
                 </div>
             </div>
         </div>
@@ -127,7 +191,7 @@ definePageMeta({
         .gcw {
             @apply px-12 w-full;
             .gc {
-                @apply w-full max-w-screen-md flex flex-row px-12 mx-auto rounded-3xl items-center justify-around py-4 mb-12 ;
+                @apply w-full max-w-screen-md flex flex-col sm:flex-row px-12 mx-auto rounded-3xl items-center justify-around py-4 mb-12 ;
                 background: linear-gradient(to bottom right, #04645c 0%, #03bb93 100%);
                 .gcc {
                     @apply flex flex-col items-center justify-center text-white p-4;
@@ -151,7 +215,7 @@ definePageMeta({
             .title-container {
                 @apply mb-8;
                 .mini-title {
-                    @apply text-teal-900 text-xs;
+                    @apply text-teal-600 text-xs;
                 }
 
                 .title {
@@ -160,10 +224,18 @@ definePageMeta({
             }
 
             .features-container {
-                @apply w-full max-w-screen-md mx-auto flex flex-row justify-center;
+                @apply w-full max-w-screen-md mx-auto flex flex-col md:flex-row justify-center mb-12;
 
                 .feature {
-                    @apply bg-teal-50 mx-2 flex flex-col justify-center px-4 py-6 rounded-lg shadow-xl;
+                    @apply bg-teal-50 flex flex-col justify-center px-4 py-6 rounded-lg shadow-xl mb-4 md:mb-0 flex-1 max-w-xs mx-auto md:mx-2;
+
+                    .img-container {
+                        @apply w-full flex flex-row items-center justify-center;
+                        
+                        img {
+                            @apply h-14 w-auto mb-4;
+                        }
+                    }
 
                     .content {
                         .title {
@@ -171,15 +243,15 @@ definePageMeta({
                         }
 
                         .subtitle {
-                            @apply text-xs text-gray-700 font-thin;
+                            @apply text-xs text-gray-700 font-light;
                         }
                     }
 
                     .actions {
                         @apply mt-3;
 
-                        button {
-                            @apply text-sm py-1 px-3 bg-teal-500 hover:bg-teal-700 transition;
+                        button, a {
+                            @apply text-sm py-2 px-3 bg-teal-500 hover:bg-teal-700 transition rounded-lg font-normal;
                         }
                     }
 
@@ -192,6 +264,95 @@ definePageMeta({
                         .subtitle {
                             @apply text-white;
                         }
+                    }
+                }
+            }
+        }
+
+        .how-it-works {
+            @apply w-full bg-teal-50 px-2 py-4 mb-12;
+
+            .title {
+                @apply pt-8 pb-12 md:py-8 text-teal-500 text-xl;
+            }
+
+            .items {
+                @apply flex md:flex-row flex-col items-center md:items-start justify-center mb-8;
+
+                .item {
+                    @apply flex-1 max-w-xs mb-12 md:mb-0;
+
+                    img {
+                        @apply h-28 mx-auto;
+                    }
+
+                    .title {
+                        @apply text-gray-700 text-base pb-2;
+                    }
+
+                    .subtitle {
+                        @apply text-gray-600 text-xs font-light;
+                    }
+                }
+            }
+        }
+
+        .domains-we-cover {
+            @apply w-full mb-12;
+            & > .title {
+                @apply text-sm font-bold text-teal-500;
+            }
+
+            .subtitle {
+                @apply w-full max-w-md mx-auto text-xs font-light text-gray-500 mb-12;
+            }
+
+            .items {
+                @apply w-full max-w-screen-md mx-auto items-center md:items-start justify-center mb-8 grid grid-cols-5;
+
+                .item {
+                    @apply mb-6;
+
+                    img {
+                        @apply h-14 mx-auto mb-2;
+                    }
+
+                    .title {
+                        @apply text-gray-700 text-xs pb-2 text-center font-bold;
+                    }
+                }
+            }
+        }
+
+        .word-of-mouth {
+            @apply w-full py-12;
+
+            @apply bg-gray-200;
+
+            .title {
+                @apply text-gray-800 uppercase pb-12 text-2xl;
+            }
+
+            .items {
+                @apply w-full max-w-screen-md mx-auto flex flex-col md:flex-row;
+
+                .item {
+                    @apply max-w-xs mx-auto md:mx-2 flex flex-col items-center justify-center border border-teal-500 bg-white p-8 rounded-lg mb-4;
+
+                    img {
+                        @apply w-16 mx-auto;
+                    }
+
+                    .name {
+                        @apply text-sm font-bold text-gray-700;
+                    }
+
+                    .position {
+                        @apply text-xs font-light mb-6 text-gray-500;
+                    }
+
+                    .description {
+                        @apply text-sm font-light text-gray-600;
                     }
                 }
             }
