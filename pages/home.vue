@@ -4,6 +4,12 @@ definePageMeta({
   layout: "visitor",
 });
 
+const features = [
+    {img:"/img/Career_mentoring.png",title: "Career Mentoring",subtitle:"Learn the tricks and trade of their desired industry."},
+    {img:"/img/Career_counselling.png",title: "Career Counselling",subtitle:"Get advice/guidance from industry professionals on which career path would best fit your skills or interests."},
+    {img:"/img/Subject_tutoring.png",title: "Subject Tutoring",subtitle:"Focus on learning a particular subject from subject specialists."}
+]
+
 </script>
 <template>
   <div class="w">
@@ -51,18 +57,24 @@ definePageMeta({
                 <div class="title">Designed for Quadmasters <br /> and Quadmates</div>
             </div>
             <div class="features-container">
-                <div v-for="i in 3" class="feature" :key="i">
+                <div v-for="{img, title, subtitle} in features" class="feature" :key="title">
                     <div class="img-container">
-                        <img src="" alt="">
+                        <img :src="img" alt="">
                     </div>
                     <div class="content">
-                        <div class="title">Career Mentoring</div>
-                        <div class="subtitle">Learn the tricks and trade of their desired industry.</div>
+                        <div class="title">{{title}}</div>
+                        <div class="subtitle">{{subtitle}}</div>
                     </div>
                     <div class="actions">
-                        <button>Learn More</button>
+                        <NuxtLink to="/about" >Learn More</NuxtLink>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="how-it-works">
+            <div class="title">HOW IT WORKS?</div>
+            <div class="items">
+
             </div>
         </div>
     </div>
@@ -127,7 +139,7 @@ definePageMeta({
         .gcw {
             @apply px-12 w-full;
             .gc {
-                @apply w-full max-w-screen-md flex flex-row px-12 mx-auto rounded-3xl items-center justify-around py-4 mb-12 ;
+                @apply w-full max-w-screen-md flex flex-col sm:flex-row px-12 mx-auto rounded-3xl items-center justify-around py-4 mb-12 ;
                 background: linear-gradient(to bottom right, #04645c 0%, #03bb93 100%);
                 .gcc {
                     @apply flex flex-col items-center justify-center text-white p-4;
@@ -151,7 +163,7 @@ definePageMeta({
             .title-container {
                 @apply mb-8;
                 .mini-title {
-                    @apply text-teal-900 text-xs;
+                    @apply text-teal-600 text-xs;
                 }
 
                 .title {
@@ -160,10 +172,18 @@ definePageMeta({
             }
 
             .features-container {
-                @apply w-full max-w-screen-md mx-auto flex flex-row justify-center;
+                @apply w-full max-w-screen-md mx-auto flex flex-col md:flex-row justify-center;
 
                 .feature {
-                    @apply bg-teal-50 mx-2 flex flex-col justify-center px-4 py-6 rounded-lg shadow-xl;
+                    @apply bg-teal-50 flex flex-col justify-center px-4 py-6 rounded-lg shadow-xl mb-4 md:mb-0 flex-1 max-w-xs mx-auto md:mx-2;
+
+                    .img-container {
+                        @apply w-full flex flex-row items-center justify-center;
+                        
+                        img {
+                            @apply h-14 w-auto mb-4;
+                        }
+                    }
 
                     .content {
                         .title {
@@ -178,8 +198,8 @@ definePageMeta({
                     .actions {
                         @apply mt-3;
 
-                        button {
-                            @apply text-sm py-1 px-3 bg-teal-500 hover:bg-teal-700 transition;
+                        button, a {
+                            @apply text-sm py-2 px-3 bg-teal-500 hover:bg-teal-700 transition rounded-lg font-normal;
                         }
                     }
 
@@ -195,6 +215,10 @@ definePageMeta({
                     }
                 }
             }
+        }
+
+        .how-it-works {
+            
         }
     }
 }
