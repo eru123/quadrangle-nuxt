@@ -16,6 +16,19 @@ const itWorks = [
     {img:"/img/How_it_works-Start.png",title: "Start your session!",subtitle:"Start learning from our Quadmasters after completing the payment"}
 ]
 
+const domainsCover = [
+    {img: "/img/Icon-Business.png", title: "Business"},
+    {img: "/img/Icon-Engineering.png", title: "Engineering"},
+    {img: "/img/Icon-Computer_Science.png", title: "Computer Science"},
+    {img: "/img/Icon-Arts.png", title: "Arts & Design"},
+    {img: "/img/Icon-Health.png", title: "Health & Medicine"},
+    {img: "/img/Icon-Tourism.png", title: "Tourism"},
+    {img: "/img/Icon-Agriculture.png", title: "Agriculture"},
+    {img: "/img/Icon-Law.png", title: "Public Service"},
+    {img: "/img/Icon-Science.png", title: "Science"},
+    {img: "/img/Icon-Teacher.png", title: "Teacher Education"},
+]
+
 </script>
 <template>
   <div class="w">
@@ -84,6 +97,17 @@ const itWorks = [
                     <img :src="img">
                     <div class="title">{{title}}</div>
                     <div class="subtitle">{{subtitle}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="domains-we-cover">
+            <div class="title">Domains we cover</div>
+            <div class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore</div>
+            <div class="items">
+                <div class="item" v-for="{img, title} in domainsCover">
+                    <img :src="img">
+                    <div class="title">{{title}}</div>
                 </div>
             </div>
         </div>
@@ -253,6 +277,34 @@ const itWorks = [
                     }
                 }
             }
+        }
+
+        .domains-we-cover {
+            @apply w-full mb-12;
+            & > .title {
+                @apply text-sm font-bold text-teal-500;
+            }
+
+            .subtitle {
+                @apply w-full max-w-md mx-auto text-xs font-light text-gray-500 mb-12;
+            }
+
+            .items {
+                @apply w-full max-w-screen-md mx-auto items-center md:items-start justify-center mb-8 grid grid-cols-5;
+
+                .item {
+                    @apply mb-6;
+
+                    img {
+                        @apply h-14 mx-auto mb-2;
+                    }
+
+                    .title {
+                        @apply text-gray-700 text-xs pb-2 text-center font-bold;
+                    }
+                }
+            }
+
         }
     }
 }
