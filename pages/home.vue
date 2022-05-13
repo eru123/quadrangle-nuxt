@@ -228,9 +228,10 @@ eiusmod tempor incididunt ut labore et dolore</div>
 
                 .feature {
                     @apply bg-teal-50 flex flex-col justify-center px-4 py-6 rounded-lg shadow-xl mb-4 md:mb-0 flex-1 max-w-xs mx-auto md:mx-2;
-
+                    
                     .img-container {
                         @apply w-full flex flex-row items-center justify-center;
+                        flex: 0;
                         
                         img {
                             @apply h-14 w-auto mb-4;
@@ -238,6 +239,7 @@ eiusmod tempor incididunt ut labore et dolore</div>
                     }
 
                     .content {
+                        @apply flex-1;
                         .title {
                             @apply text-sm mb-2 text-sky-900 font-bold;
                         }
@@ -249,6 +251,7 @@ eiusmod tempor incididunt ut labore et dolore</div>
 
                     .actions {
                         @apply mt-3;
+                        flex: 0;
 
                         button, a {
                             @apply text-sm py-2 px-3 bg-teal-500 hover:bg-teal-700 transition rounded-lg font-normal;
@@ -256,7 +259,7 @@ eiusmod tempor incididunt ut labore et dolore</div>
                     }
 
                     &:hover {
-                        @apply bg-sky-900;
+                        @apply bg-sky-900 transition;
                         .title {
                             @apply text-white;
                         }
