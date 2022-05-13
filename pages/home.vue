@@ -6,7 +6,7 @@ definePageMeta({
 
 const features = [
     {img:"/img/Career_mentoring.png",title: "Career Mentoring",subtitle:"Learn the tricks and trade of their desired industry."},
-    {img:"/img/Career_counselling.png",title: "Career Counselling",subtitle:"Get advice/guidance from industry professionals on which career path would best fit your skills or interests."},
+    {img:"/img/career_counselling.png",title: "Career Counselling",subtitle:"Get advice/guidance from industry professionals on which career path would best fit your skills or interests."},
     {img:"/img/Subject_tutoring.png",title: "Subject Tutoring",subtitle:"Focus on learning a particular subject from subject specialists."}
 ]
 
