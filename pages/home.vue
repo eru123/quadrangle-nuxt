@@ -118,7 +118,7 @@ eiusmod tempor incididunt ut labore et dolore</div>
             </div>
         </div>
 
-        <div class="word-of-mouth">
+        <div class="word-of-mouth" v-if="false">
             <div class="title">WHAT other people are saying</div>
             <div class="items">
                 <div class="item" v-for="{img,name,position,description} in wordOfMouth">
