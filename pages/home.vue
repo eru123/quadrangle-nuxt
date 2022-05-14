@@ -280,7 +280,7 @@ const wordOfMouth = [
             @apply w-full bg-sky-900 px-2 py-4 mb-12;
 
             .title {
-                @apply pt-8 pb-12 md:py-8 text-sky-100 text-xl;
+                @apply pt-8 pb-12 md:py-8 text-sky-50 text-xl;
             }
 
             .items {
@@ -294,11 +294,11 @@ const wordOfMouth = [
                     }
 
                     .title {
-                        @apply text-teal-300 text-base pb-2;
+                        @apply text-sky-100 text-base pb-2;
                     }
 
                     .subtitle {
-                        @apply text-sky-100 text-xs font-light;
+                        @apply text-sky-200 text-xs font-light;
                     }
                 }
             }

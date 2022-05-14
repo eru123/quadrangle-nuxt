@@ -73,7 +73,8 @@ const social = [
           @apply mx-4 md:ml-4 mr-0;
 
           & > * {
-            @apply p-4 md:p-3 bg-gray-400 hover:bg-gray-700 text-sm text-white rounded-full transition duration-200 ease-in-out;
+            @apply p-4 md:p-3 bg-gray-400 hover:bg-gray-700 text-white rounded-full transition duration-200 ease-in-out;
+            @apply w-4 h-4;
           }
         }
       }
