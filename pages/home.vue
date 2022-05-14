@@ -50,8 +50,8 @@ const wordOfMouth = [
             </div>
 
             <div class="a">
-                <button class="e">Get Early Access</button>
-                <button class="s">Support</button>
+                <NuxtLink to="/contact" class="e">Get Early Access</NuxtLink>
+                <NuxtLink :to="{path: '/about', hash: '#support'}" class="s">Support</NuxtLink>
             </div>
         </div>
         <div class="bn">
@@ -145,8 +145,7 @@ const wordOfMouth = [
     }
 
     .b { // banner
-        @apply  font-extrabold text-3xl text-center text-white flex flex-col justify-start items-center mb-96;
-        // max-height: 80vh;
+        @apply  font-extrabold text-3xl text-center text-white flex flex-col justify-start items-center;
         
         .j {
             @apply bg-sky-900 w-full;
@@ -166,7 +165,7 @@ const wordOfMouth = [
             .a {
                 @apply pt-2 mb-4;
 
-                button {
+                a {
                     @apply px-6 py-2 text-base mx-2 rounded-full font-thin transition-all;
                 }
 

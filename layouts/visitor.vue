@@ -13,8 +13,24 @@ if (process.client) {
 
 </script>
 <template>
-  <div class="w-full">
+  <div class="w-main w-full">
     <LandingHeader />
-    <slot />
+    <div class="c">
+      <slot />
+    </div>
+    <LandingFooter />
   </div>
 </template>
+<style lang="scss" scoped>
+.w-main {
+  @apply flex flex-col;
+  min-height: 100vh;
+
+  & > div {
+    flex:0;
+  }
+  .c {
+    @apply w-full flex-1;
+  }
+}
+</style>
