@@ -41,12 +41,10 @@ const social = [
 
     .g {
       @apply flex flex-row items-center flex-1;
-      &:not(:last-child) {
-        @apply mb-4
-      }
+        @apply mb-8 md:mb-0;
 
       &.b {
-        @apply justify-center md:justify-start;
+        @apply justify-center md:justify-start order-1;
 
         .l {
           @apply w-6 h-6 mr-2 md:mr-4;
@@ -59,25 +57,20 @@ const social = [
       }
 
       &.i {
-        @apply justify-center;
+        @apply justify-center order-3 md:order-2;
 
         & > .i {
-          @apply text-gray-700 hover:text-teal-500 text-sm font-normal transition duration-200 ease-in-out lg:block mx-4 ;
+          @apply text-gray-700 hover:text-teal-500 text-sm font-normal transition duration-200 ease-in-out lg:block mx-2 md:mx-4 ;
           white-space: nowrap !important;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-
-          &:not(:last-child) {
-            @apply mr-8;
-          }
         }
       }
 
       &.l {
-        @apply justify-center md:justify-end lg:justify-end;
+        @apply justify-center md:justify-end lg:justify-end order-2 md:order-3;
 
         .i {
-          @apply mx-2 md:ml-2 mr-0;
+          @apply mx-4 md:ml-4 mr-0;
 
           & > * {
             @apply p-4 md:p-3 bg-gray-400 hover:bg-gray-700 text-sm text-white rounded-full transition duration-200 ease-in-out;
