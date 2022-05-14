@@ -1,8 +1,10 @@
 <script setup>
 import { watchEffect } from 'vue'
 
+var userState = null
+
 if (process.client) {
-  const userState = useUserState()
+  userState = useUserState()
   const accountType = useAccountType();
   const accountTypeList = useAccountTypeList();
   const userLoginState = computed(() => accountTypeList.value.find(i => i.title == accountType.value) && userState.value)
@@ -14,7 +16,7 @@ if (process.client) {
 }
 </script>
 <template>
-  <div class="wrapper">
+  <div v-show="userState" class="wrapper">
     <NuxtLink to="/user">User</NuxtLink>
     <NuxtLink to="/logout">Logout</NuxtLink>
     <slot />

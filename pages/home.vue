@@ -227,7 +227,7 @@ eiusmod tempor incididunt ut labore et dolore</div>
                 @apply w-full max-w-screen-md mx-auto flex flex-col md:flex-row justify-center mb-12;
 
                 .feature {
-                    @apply bg-teal-50 flex flex-col justify-center px-4 py-6 rounded-lg shadow-xl mb-4 md:mb-0 flex-1 max-w-xs mx-auto md:mx-2;
+                    @apply bg-teal-50 flex flex-col justify-center px-4 py-6 rounded-lg shadow-xl mb-4 md:mb-0 flex-1 max-w-xs mx-auto md:mx-2 transition;
                     
                     .img-container {
                         @apply w-full flex flex-row items-center justify-center;
@@ -254,12 +254,12 @@ eiusmod tempor incididunt ut labore et dolore</div>
                         flex: 0;
 
                         button, a {
-                            @apply text-sm py-2 px-3 bg-teal-500 hover:bg-teal-700 transition rounded-lg font-normal;
+                            @apply text-sm py-2 px-3 bg-teal-500 transition rounded-lg font-normal;
                         }
                     }
 
                     &:hover {
-                        @apply bg-sky-900 transition;
+                        @apply bg-sky-900;
                         .title {
                             @apply text-white;
                         }
