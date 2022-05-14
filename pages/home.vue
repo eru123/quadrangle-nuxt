@@ -108,8 +108,7 @@ const wordOfMouth = [
         </div>
         <div class="domains-we-cover">
             <div class="title">Domains we cover</div>
-            <div class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore</div>
+            <div class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</div>
             <div class="items">
                 <div class="item" v-for="{img, title} in domainsCover">
                     <img :src="img">
@@ -117,7 +116,6 @@ eiusmod tempor incididunt ut labore et dolore</div>
                 </div>
             </div>
         </div>
-
         <div class="word-of-mouth" v-if="false">
             <div class="title">WHAT other people are saying</div>
             <div class="items">
@@ -129,6 +127,13 @@ eiusmod tempor incididunt ut labore et dolore</div>
                 </div>
             </div>
         </div>
+        <div class="join-waitlist">
+            <div class="container">
+                <h1 class="title">Join the Waitlist</h1>
+                <h2 class="subtitle">Join the waiting list to be notified when our platform goes LIVE!</h2>
+                <NuxtLink to="/contact" class="early-access">Get early access</NuxtLink>
+            </div>
+        </div>        
     </div>
   </div>
 </template>
@@ -215,7 +220,7 @@ eiusmod tempor incididunt ut labore et dolore</div>
             .title-container {
                 @apply mb-8;
                 .mini-title {
-                    @apply text-teal-600 text-xs;
+                    @apply text-teal-600 text-xs mb-2;
                 }
 
                 .title {
@@ -303,18 +308,18 @@ eiusmod tempor incididunt ut labore et dolore</div>
         .domains-we-cover {
             @apply w-full mb-12;
             & > .title {
-                @apply text-sm font-bold text-teal-500;
+                @apply text-sm font-bold text-teal-500 mb-2;
             }
 
             .subtitle {
-                @apply w-full max-w-md mx-auto text-xs font-light text-gray-500 mb-12;
+                @apply w-full max-w-md mx-auto text-xs font-light text-gray-500 mb-6 md:mb-12 px-8;
             }
 
             .items {
-                @apply w-full max-w-screen-md mx-auto items-center md:items-start justify-center mb-8 grid grid-cols-5;
+                @apply w-full max-w-screen-md mx-auto items-center md:items-start justify-center mb-8 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 px-8;
 
                 .item {
-                    @apply mb-6;
+                    @apply mb-6 mx-2;
 
                     img {
                         @apply h-14 mx-auto mb-2;
@@ -357,6 +362,24 @@ eiusmod tempor incididunt ut labore et dolore</div>
                     .description {
                         @apply text-sm font-light text-gray-600;
                     }
+                }
+            }
+        }
+
+        .join-waitlist {
+            @apply w-full px-8 mb-12;
+
+            .container {
+                @apply w-full max-w-screen-md mx-auto bg-sky-900 text-white rounded-3xl py-12 px-8;
+                .title {
+                    @apply text-3xl my-0;
+                }
+                .subtitle {
+                    @apply text-sm mt-0 mb-4 font-light;
+                }
+
+                a.early-access {
+                    @apply bg-teal-500 text-white hover:bg-teal-600 text-sm px-8 py-4 rounded-xl transition font-normal;
                 }
             }
         }
