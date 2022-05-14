@@ -1,3 +1,18 @@
+<script setup>
+
+const navs = [
+  {to:'/about', text: 'About'},
+  {to:{path:'/about', hash: '#roadmap'}, text: 'Roadmap'},
+  {to:'/contact', text: 'Contact Us'},
+]
+
+const social = [
+  {to: 'https://instagram.com', icon: ['fab','instagram']},
+  {to: 'https://facebook.com', icon: ['fab','facebook']},
+]
+
+</script>
+
 <template>
   <div class="w">
     <div class="c">
@@ -6,12 +21,12 @@
         <div class="n">Quadrangle</div>
       </NuxtLink>
       <div class="g i">
-        <NuxtLink to="/about" class="i">About</NuxtLink>
-        <NuxtLink :to="{path:'/about', hash: '#roadmap'}" class="i">Roadmap</NuxtLink>
-        <NuxtLink to="/contact" class="i">Contact Us</NuxtLink>
+        <NuxtLink v-for="{to, text}, i in navs" :to="to" class="i" :key="i">{{text}}</NuxtLink>
       </div>
       <div class="g l">
-        <NuxtLink to="/support" class="i">Get Early Access</NuxtLink>
+        <NuxtLink v-for="{to, icon}, i in social" target="_blank" :to="to" class="i" :key="i">
+          <icon :icon="icon" />
+        </NuxtLink>
       </div>
     </div> 
   </div>
@@ -25,16 +40,16 @@
     @apply w-full py-4 px-4 lg:px-8 grid grid-cols-1 md:grid-cols-3 items-center max-w-screen-lg items-center justify-center;
 
     .g {
-      @apply flex flex-row items-center lg:flex-1;
+      @apply flex flex-row items-center flex-1;
       &:not(:last-child) {
         @apply mb-4
       }
 
       &.b {
-        @apply justify-center lg:justify-start;
+        @apply justify-center md:justify-start;
 
         .l {
-          @apply w-6 h-6 mr-2 lg:mr-4;
+          @apply w-6 h-6 mr-2 md:mr-4;
         }
 
         .n {
@@ -44,32 +59,29 @@
       }
 
       &.i {
-        @apply justify-center ;
+        @apply justify-center;
 
-        .i {
-          @apply text-gray-700 hover:text-teal-500 text-sm font-normal transition duration-200 ease-in-out lg:block;
+        & > .i {
+          @apply text-gray-700 hover:text-teal-500 text-sm font-normal transition duration-200 ease-in-out lg:block mx-4 ;
+          white-space: nowrap !important;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 
           &:not(:last-child) {
             @apply mr-8;
           }
-
-          &.router-link-active {
-            @apply text-teal-500;
-            
-          }
         }
       }
 
       &.l {
-        @apply justify-center lg:justify-end;
+        @apply justify-center md:justify-end lg:justify-end;
 
         .i {
-          @apply bg-teal-500 hover:bg-teal-600 text-sm text-white px-4 lg:px-8 py-2 rounded-full transition duration-200 ease-in-out;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
+          @apply mx-2 md:ml-2 mr-0;
+
+          & > * {
+            @apply p-4 md:p-3 bg-gray-400 hover:bg-gray-700 text-sm text-white rounded-full transition duration-200 ease-in-out;
+          }
         }
       }
     }

@@ -46,6 +46,7 @@
         .i {
           @apply text-gray-400 hover:text-teal-500 text-sm font-bold transition duration-200 ease-in-out lg:block;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          white-space: nowrap;
 
           hr {
             @apply border-t-2 mx-2 mt-1 border-white;
@@ -81,6 +82,7 @@
 
         .i {
           @apply bg-teal-500 hover:bg-teal-600 text-sm text-white px-4 lg:px-8 py-2 rounded-full transition duration-200 ease-in-out;
+          white-space: nowrap;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;

@@ -277,10 +277,10 @@ const wordOfMouth = [
         }
 
         .how-it-works {
-            @apply w-full bg-teal-50 px-2 py-4 mb-12;
+            @apply w-full bg-sky-900 px-2 py-4 mb-12;
 
             .title {
-                @apply pt-8 pb-12 md:py-8 text-teal-500 text-xl;
+                @apply pt-8 pb-12 md:py-8 text-sky-100 text-xl;
             }
 
             .items {
@@ -294,11 +294,11 @@ const wordOfMouth = [
                     }
 
                     .title {
-                        @apply text-gray-700 text-base pb-2;
+                        @apply text-teal-300 text-base pb-2;
                     }
 
                     .subtitle {
-                        @apply text-gray-600 text-xs font-light;
+                        @apply text-sky-100 text-xs font-light;
                     }
                 }
             }
@@ -315,7 +315,7 @@ const wordOfMouth = [
             }
 
             .items {
-                @apply w-full max-w-screen-md mx-auto items-center md:items-start justify-center mb-8 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 px-8;
+                @apply w-full max-w-screen-md mx-auto items-start md:items-start justify-center mb-8 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 px-8;
 
                 .item {
                     @apply mb-6 mx-2;
