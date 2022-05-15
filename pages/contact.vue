@@ -1,7 +1,7 @@
 <script setup>
 
 definePageMeta({
-  layout: "visitor",
+  layout: "visitor"
 });
 
 </script>
