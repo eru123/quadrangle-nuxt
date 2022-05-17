@@ -6,7 +6,13 @@ definePageMeta({
 
 </script>
 <template>
-  <div>
-    <UnderDevelopment />
+  <div class="w">
+    <ContactEarlyAccess />
   </div>
 </template>
+<style lang="scss" scoped>
+.w {
+  @apply w-full;
+}
+
+</style>

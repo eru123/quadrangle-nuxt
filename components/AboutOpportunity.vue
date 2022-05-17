@@ -48,7 +48,7 @@
         & > .i {
             @apply flex-1 order-1 lg:order-2 mx-4;
             img {
-                @apply max-w-screen-md mx-auto;
+                @apply w-full max-w-screen-md mx-auto;
             }
         }
     }
