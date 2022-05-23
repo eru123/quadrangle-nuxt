@@ -7,15 +7,27 @@ const lname = useState('lname', () => null)
 const email = useState('email', () => null)
 const organization = useState('organization', () => null)
 
-// if(process.client) {
-    watchEffect(() => {
-        console.log(accType.value)
-    })
-// }
-
-function onSubmit(e){
+async function onSubmit(e){
     const formData = new FormData(e.target)
     console.log(formData.get('type'), accType)
+    const data = {
+        fname: fname.value,
+        lname: lname.value,
+        email: email.value,
+        organization: organization.value,
+        role: accType.value
+    }
+    console.log(data)
+    await $fetch('/api/earlyaccess', {
+        method: 'POST',
+        body: data
+    }).then(e => console.log(e))
+    e.target.reset();
+    fname.value = ""
+    lname.value = ""
+    email.value = ""
+    organization.value = ""
+    accType.value = ""
     // const data = new URLSearchParams([
     //     ['item',formData.get('item')],
     //     ['pass',formData.get('pass')],
@@ -82,7 +94,7 @@ function onSubmit(e){
     @apply w-full px-8 my-12;
 
     .c {
-        @apply w-full max-w-screen-xl mx-auto px-8 flex flex-col lg:flex-row items-center justify-center lg:items-start;
+        @apply w-full max-w-screen-xl mx-auto px-8 flex gap-4 flex-col lg:flex-row items-center justify-center lg:items-start;
         
 
 
@@ -123,12 +135,14 @@ function onSubmit(e){
                 }
 
                 .rg {
-                    @apply w-full flex flex-row items-center justify-start py-4;
+                    @apply w-full flex flex-row items-center justify-start py-4 gap-4;
                     
                     .r {
-                        @apply flex mr-4 border border-gray-400 bg-white py-3 px-4 rounded-lg;
-                        // height: 1.5rem;
-
+                        @apply flex-1 flex border border-gray-400 bg-white py-3 px-4 rounded-lg;
+                        
+                        &, * {
+                            cursor: pointer;
+                        }
 
                         label {
                             @apply  text-gray-500 flex flex-row items-center justify-center;
@@ -151,6 +165,10 @@ function onSubmit(e){
                         }
                     }
                 }
+            }
+
+            button[type=submit] {
+                @apply py-4 px-8 bg-teal-500 hover:bg-teal-600 w-full transition rounded-lg;
             }
         }
 

@@ -1,6 +1,7 @@
+import type { IncomingMessage, ServerResponse } from "http";
 import {db} from '../firebaseAdmin'
 
-export default async (req, res) => {
+export default async (req: IncomingMessage, res: ServerResponse) => {
     const id = 'visits'
     // increment the counter
     const doc = await db.collection('counters').doc(id).get()
