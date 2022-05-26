@@ -1,12 +1,18 @@
 <script setup>
 
 definePageMeta({
-  layout: "visitor",
+  layout: "visitor"
 });
 
 </script>
 <template>
-  <div>
-    <UnderDevelopment />
+  <div class="w">
+    <ContactEarlyAccess />
   </div>
 </template>
+<style lang="scss" scoped>
+.w {
+  @apply w-full;
+}
+
+</style>

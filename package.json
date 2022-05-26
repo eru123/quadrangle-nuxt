@@ -2,19 +2,21 @@
   "name": "quadrangle-nuxt",
   "private": true,
   "scripts": {
-    "dev": "nuxi dev",
-    "build": "nuxi build",
+    "dev": "nuxt dev",
+    "build": "nuxt build",
     "start": "node .output/server/index.mjs",
-    "deploy:firebase": "npx cross-env NITRO_PRESET=firebase npm run build && firebase deploy"
+    "deploy:firebase": "npx cross-env NITRO_PRESET=firebase npm run build && firebase deploy",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",
-    "nuxt3": "latest",
     "postcss": "^8.4.12",
     "sass": "^1.49.11",
     "tailwindcss": "^3.0.23"
   },
   "dependencies": {
+    "nuxt": "3.0.0-rc.3",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",

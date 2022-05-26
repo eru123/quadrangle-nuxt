@@ -23,7 +23,17 @@ if (process.client) {
 
 </script>
 <template>
-  <div>
-    <UnderDevelopment />
+  <div class="w">
+    <AboutPurpose />
+    <AboutOpportunity />
+    <AboutRoadmap />
+    <AboutSupport />
+    <AboutMessage />
   </div>
 </template>
+<style lang="scss" scoped>
+.w {
+  @apply w-full;
+}
+
+</style>
